@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Central Region Trivia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <header> 
+        <div class="header-comp">
+          <div class="header-comp-item">
+            <nav> 
+                <a href="index.html"><img src="images/homesm.png" alt="Home" class="hover-effect"/></a>
+                <a href="start.html"><img src="images/start-game-down-sm.png" alt="Start Game" class="hover-effect"/></a>
+                <a href="contacts.html"><img src="images/contactus.png" alt="Contact us" class="hover-effect"/></a> 
+            </nav>
+        </div>
+            <div class="header-comp-name">Belize Music Master</div>
+            <div class="header-comp-item"><img src="images/logo-trans-shadow.png" width="200" height="150" alt="Belize Music Master Logo"/></div>
+        </div>
+    </header> 
+        
+    <div class="container"> 
+        <main id="main-content"> 
+            <h1>Central Region</h1>
+            <nav class="tabs">
+                <a href="central-region.html" class="tab">History</a>
+                <a href="central-region-music.html" class="tab">Music</a>
+                <a href="central-region-examples.html" class="tab">Examples</a>
+                <a href="central-region-trivia.html" class="tab active">Trivia</a>
+            </nav>
+            
+            <div id="trivia-container">
+                <p>Loading trivia...</p>
+            </div>
+
+                <script>
+
+            // Retrieving scores
+            const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
+            
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const triviaContainer = document.querySelector("#trivia-container");
+                        let currentQuestionIndex = 0;
+                        let score = 0;
+                
+                        // Fetch questions from the external JS file
+
+                        const questions = getRegionQuestions("central");
+                
+                        // Display the "Start Game" button initially
+                        triviaContainer.innerHTML = `
+                        <p>"Hello! 🌟 All set for trivia time? Hit the Start button whenever you’re ready. You’ve got this—let’s play! 
+			            </p>
+                            <button class="pill-button" id="start-game">Start Game</button>
+                        `;
+                
+                        // Add event listener to the "Start Game" button
+                        document.getElementById("start-game").addEventListener("click", function () {
+                            // Initialize game and save scores for the region
+                            const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
+
+                
+                            // Start the game by displaying the first question
+                            displayQuestion();
+                        });
+                
+                        function displayQuestion() {
+                            if (currentQuestionIndex < questions.length) {
+                                let videotext = ""; // Initialize videotext with an empty string
+                
+                                const currentQuestion = questions[currentQuestionIndex];
+                
+                                if (currentQuestionIndex === 3) {
+                                    videotext = `<p>${currentQuestion.video}</p>`;
+                                }
+                
+                                triviaContainer.innerHTML = `
+                                    <p>${currentQuestionIndex + 1}. ${currentQuestion.question}</p>
+                                    
+                                    ${videotext}
+                
+                                    <div id="options-container">
+                                        ${currentQuestion.options.map((option, index) => `
+                                            <button class="pill-button" data-option="${option}">${option}</button>
+                                        `).join('')}
+                                    </div>
+                                    <span id="result"></span>
+                                    
+                                `;
+                
+                                document.querySelectorAll(".pill-button").forEach(button => {
+                                    button.addEventListener("click", function () {
+                                        checkAnswer(this.getAttribute("data-option"));
+                                    });
+                                });
+                            } else {
+                                let badgeHTML = "";
+                                if (score >= 3) {
+                                    badgeHTML = `
+                                        <p>Badge</p>
+                                        <p>Congratulations, you have successfully earned your Central Region Kee-b badge. Keep up the good work as we proceed to Belize Rural Region.</p>
+                                        <div style="text-align: center;">
+                                            <img src="images/central-region-keeb-cert-bg.png" alt="Central Region Badge" />
+                                        </div>
+                                        
+                                    `;
+                                    
+                                    awardBadge("central-cert");
+
+                                }
+            
+                                triviaContainer.innerHTML = `
+                                    <p>Trivia complete! Your score: ${score}/${questions.length}</p>
+                                    ${badgeHTML}
+                                    <button class="pill-button" id="start-over">Start Over</button>
+                                    <button class="pill-button" id="next-region">Continue to Belize Rural Region</button>
+                                    <button class="pill-button" id="final-tally">Go to Final Tally</button>
+                                `;
+            
+                                document.getElementById("start-over").addEventListener("click", function () {
+                                    // Reset game state and reload the page
+                                    window.location.reload();
+                                });
+            
+                                document.getElementById("next-region").addEventListener("click", function () {
+                                    // Redirect to Central Region trivia
+                                    window.location.href = "rural-region.html";
+                                });
+                                
+                                document.getElementById("final-tally").addEventListener("click", function () {
+                                    // Redirect to Central Region trivia
+                                    window.location.href = "finalreport.html";
+                                });
+                                
+                                const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
+                                userScores.central = score; // Save the score for the northern region
+                                localStorage.setItem("userScores", JSON.stringify(userScores));
+                
+
+                            }
+                        }
+                
+                        function checkAnswer(selectedOption) {
+                            const resultElement = document.getElementById("result");
+                            if (selectedOption.toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
+                                resultElement.textContent = "Correct!";
+                                resultElement.style.color = "green";
+                                score++;
+            
+                            } else {
+                                resultElement.textContent = `Wrong! The correct answer was: ${questions[currentQuestionIndex].answer}`;
+                                resultElement.style.color = "red";
+                            }
+                            currentQuestionIndex++;
+                            setTimeout(displayQuestion, 1000); // Show the next question after 1 second
+                        }
+                    });
+                </script>
+
+
+
+        </main> 
+
+        <aside> 
+            <!-- Ensure the correct path to the image -->
+            <img id="read-main-text" src="images/central-map.png" alt="Click to read the main content" title="Hi, Click on the map to start reading or to stop reading." onclick="toggleSpeech('trivia-container')" />
+        </aside> 
+    </div>
+    
+    <footer>(c) Copyright Belize Music Master 2025</footer>
+</body>
+</html>
