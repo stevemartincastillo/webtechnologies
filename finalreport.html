@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Final Tally</title>
+    <title>Final Tally - Belize Music Master: Celebrate Your Achievements and Badges</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
@@ -31,7 +31,7 @@
                 <p>Loading badges...</p>
             </div>
 
-                <script>
+        <script>
 
             // Retrieving scores
             const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
@@ -57,16 +57,16 @@
                         <img src="images/southern-rural-region-keeb-cert-bg.png" alt="Southern Rural Region Badge" width="150" />
                     </div>
                  <h2>Congratulations, Winner!</h2>
-You are now an official BMM—Belize Music Master! With the knowledge you’ve gained,
-you’re ready to guide others through the vibrant tapestry of Belize, showcasing the
-incredible people groups in each region. Their stories, traditions, and contributions are a
-testament to their resilience and the rich cultural mosaic that makes Belize so unique.
-We celebrate their worthiness in finding peace and prosperity, and we deeply
-appreciate the beauty they bring to this nation—much like the vibrant colors and
-intricate patterns you see on my beak and feathers.<br />
-Thank you for participating in this journey of discovery. We hope you’ll visit again soon
-to explore even more of Belize’s wonders. Until then, carry this knowledge with pride
-and share the beauty of Belize with the world!
+                    You are now an official BMM—Belize Music Master! With the knowledge you’ve gained,
+                    you’re ready to guide others through the vibrant tapestry of Belize, showcasing the
+                    incredible people groups in each region. Their stories, traditions, and contributions are a
+                    testament to their resilience and the rich cultural mosaic that makes Belize so unique.
+                    We celebrate their worthiness in finding peace and prosperity, and we deeply
+                    appreciate the beauty they bring to this nation—much like the vibrant colors and
+                    intricate patterns you see on my beak and feathers.<br />
+                    Thank you for participating in this journey of discovery. We hope you’ll visit again soon
+                    to explore even more of Belize’s wonders. Until then, carry this knowledge with pride
+                    and share the beauty of Belize with the world!<br />    
 
                 `;
             } else {
@@ -118,67 +118,61 @@ and share the beauty of Belize with the world!
 
                 triviaContainer.innerHTML = `
 
-                 ${badgeHTML}
+                    ${badgeHTML}
 
                     <p>Here are the badges for areas you passed. Unfortunately they were not enough to award you the title of Belize Music Master.  You can try to retake the areas you failed.
-Don’t give up.<br /> You’re on the right path, and every step counts. Keep going, and you’ll get there!<br />                           
-You can do it.</p>
-<p>Click on the buttons below to try the regions you failed again:</p>
+                        Don’t give up.<br /> You’re on the right path, and every step counts. Keep going, and you’ll get there!<br />                           
+                        You can do it.</p>
+                        <p>Click on the buttons below to try the regions you failed again:</p>
 
- ${buttonHTML}
-
-
-
-
-     
+                    ${buttonHTML}
                 `;
             
                 
 
   
                                 
-// Add event listeners after the buttons are added to the DOM
-if (document.getElementById("northern-region")) {
-    document.getElementById("northern-region").addEventListener("click", function () {
-        window.location.href = "northern-region.html";
-    });
-}
+                // Add event listeners after the buttons are added to the DOM
+                if (document.getElementById("northern-region")) {
+                    document.getElementById("northern-region").addEventListener("click", function () {
+                        window.location.href = "northern-region.html";
+                    });
+                }
 
-if (document.getElementById("central-region")) {
-    document.getElementById("central-region").addEventListener("click", function () {
-        window.location.href = "central-region.html";
-    });
-}
+                if (document.getElementById("central-region")) {
+                    document.getElementById("central-region").addEventListener("click", function () {
+                        window.location.href = "central-region.html";
+                    });
+                }
 
-if (document.getElementById("rural-region")) {
-    document.getElementById("rural-region").addEventListener("click", function () {
-        window.location.href = "rural-region.html";
-    });
-}
+                if (document.getElementById("rural-region")) {
+                    document.getElementById("rural-region").addEventListener("click", function () {
+                        window.location.href = "rural-region.html";
+                    });
+                }
 
-if (document.getElementById("southern-region")) {
-    document.getElementById("southern-region").addEventListener("click", function () {
-        window.location.href = "southern-region.html";
-    });
-}
+                if (document.getElementById("southern-region")) {
+                    document.getElementById("southern-region").addEventListener("click", function () {
+                        window.location.href = "southern-region.html";
+                    });
+                }
 
-if (document.getElementById("southern-rural-region")) {
-    document.getElementById("southern-rural-region").addEventListener("click", function () {
-        window.location.href = "southern-rural-region.html";
-    });
-}
+                if (document.getElementById("southern-rural-region")) {
+                    document.getElementById("southern-rural-region").addEventListener("click", function () {
+                        window.location.href = "southern-rural-region.html";
+                    });
+                }
                 }  
                 
 
 
-                </script>
+        </script>
 
 
 
         </main> 
 
-        <aside> 
-            <!-- Ensure the correct path to the image -->
+        <aside>
             <img id="read-main-text" src="images/smallertoucan450.png" alt="Click to read the main content" title="Hi, I am Keebee! Would you like me to read for you? Click on me to start reading or to stop reading." onclick="toggleSpeech('trivia-container')" />
         </aside> 
     </div>

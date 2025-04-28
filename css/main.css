@@ -11,7 +11,7 @@ body{
   	background-size: cover;
   	background-position: center;
   	background-repeat: no-repeat;
-  	min-height: 100vh; /* Ensures full viewport coverage */
+  	min-height: 100vh; 
 	font-family: Gotham, "Comic Neue", "Comic Sans MS", cursive;
 	display: flex; 
 	flex-direction: column;
@@ -20,27 +20,17 @@ body{
 header{
 	font-size: xx-large; 
 	text-align: center; 
-	/*padding: 0.3em O; background-color: #F2EDED; color: #lClClC; */
+	
 }
 
 footer {
 	font-size: medium; 
 	text-align: center; 
-	padding: 20px 20px 20px 20px; /*background-color: #F2EDED; color: #lClClC; */
+	padding: 20px 20px 20px 20px; 
 	font: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	font-size: 12px;
 	
 }
-
-nav { 
-	/*background: #EDE6E6;*/
-} 
-main { 
-
-} 
-aside { 
-	
-} 
 
 .container {
 	display: flex;
@@ -56,17 +46,14 @@ aside {
 main {
 	flex: 1; 
 	padding: 10px 50px; 
-	/*border: 1px solid black;*/
+	/*border: 1px solid black; //used for testing */
 }
 nav {
 	flex: 0 0 0; 
 	padding: 5Opx 10px; 
-  align-content: flex-end;
-	
+  	align-content: flex-end;
 	border: 0px solid black;
-	  height: 150px;
-	/*order: -1; */
-	
+	height: 150px;
 }
 
 aside {
@@ -78,29 +65,20 @@ aside {
 	
 	display: grid;
 	grid-template-columns: 30% auto 20%;
-	/*background-color: aqua;
-	padding: 20px;*/
-	
+
 }
 .header-comp-item{
-
-	
-	/*background-color: white;*/
 	border: 0px solid #040404;
-	
-	/*padding: 10px;*/
-	
 }
+
 .header-comp-name{
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 65px;
 	color: #8f1e09;	
-	/*background-color: white;*/
 	border: 0px solid #040404;
 	padding: 40px;
 	text-align: right;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-	
 }
 
 .hover-effect {
@@ -108,41 +86,45 @@ aside {
 }
 
 .hover-effect:hover {
-    transform: scale(1.1); /* Slightly enlarge the image */
-    opacity: 0.8; /* Reduce opacity */
+    transform: scale(1.1); 
+    opacity: 0.8; 
 }
 
 .static-shadow {
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adds a shadow to the image */
-    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    border-radius: 8px; 
 }
 
 h1 {
 	font-weight: bold;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
 h4 {
 	font-weight: bold;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
 p {
 	text-align: justify;
-	line-height: 1.6; /* Improves readability */
-	margin: 10px 0; /* Adds spacing between paragraphs */
-	font-size: 16px; /* Adjusts font size for better readability */
-	color: #333; /* Sets a neutral text color */
+	line-height: 1.6; 
+	margin: 10px 0; 
+	font-size: 16px; 
+	color: #333; 
 }
 
 a:hover {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow on hover */
-    transition: text-shadow 0.3s ease; /* Smooth transition effect */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    transition: text-shadow 0.3s ease; 
 }
+
 .icon-text {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 10px;
 }
+
 .pill-button {
 	text-decoration: none;
 	font-family: 'Chewy', cursive;
@@ -154,7 +136,7 @@ a:hover {
 	color: rgb(0, 0, 0);
 	background-color: #f95c32;
 	border: 7px solid #000000;
-	border-radius: 9999px; /* Fully rounded corners */
+	border-radius: 9999px; 
 	text-align: center;
 	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.2s ease;
@@ -163,14 +145,15 @@ a:hover {
 .pill-button:hover {
 	background-color: white;
 	color: #f95c32;
-	transform: scale(1.05); /* Slightly enlarge on hover */
+	transform: scale(1.05); 
 }
+
 nav.tabs {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 	margin: 20px 0;
-	border-bottom: 2px solid #ccc; /* Creates the bottom border for the tab container */
+	border-bottom: 2px solid #ccc;
 }
 
 nav.tabs .tab {
@@ -179,11 +162,11 @@ nav.tabs .tab {
 	font-weight: bold;
 	padding: 10px 20px;
 	font-size: 17px;
-	color: #000; /* Black text */
-	background-color: #f78b0f; /* Orange background */
+	color: #000; 
+	background-color: #f78b0f; 
 	border: 2px solid #ccc;
-	border-bottom: none; /* Removes the bottom border to connect with the active tab */
-	border-radius: 8px 8px 0 0; /* Rounded top corners */
+	border-bottom: none; 
+	border-radius: 8px 8px 0 0; 
 	text-align: center;
 	cursor: pointer;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -191,12 +174,12 @@ nav.tabs .tab {
 
 nav.tabs .tab:hover {
 	background-color: #ffffff; 
-	color: #f78b0f; /* Orange text on hover */
+	color: #f78b0f; 
 }
 
 nav.tabs .tab.active {
-	background-color: #818181; /* Even darker orange for active state */
-	color: #000000; /* White text for active state */	
-	border-bottom: 2px solid #ccc; /* Seamlessly connects to the page */
+	background-color: #818181; 
+	color: #000000; 	
+	border-bottom: 2px solid #ccc; 
 	font-weight: bold;
 }

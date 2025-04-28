@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Belize Music Master</title>
+	<title>Northern Region Trivia - Belize Music Master: Test Your Knowledge of History and Culture</title>
 	<script src="js/main.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
@@ -44,14 +44,14 @@
     </div>
     <script>
 
-		// Saving scores
-localStorage.setItem("userScores", JSON.stringify(initialuserScores));
-// Initializing badges
-const initialBadges = { badges: [], isBMMAwarded: false };
-localStorage.setItem("badges", JSON.stringify(initialBadges));
-///////////////////////////////////////////////////////////////////////
-// Retrieving scores
-const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
+				// Saving scores
+		localStorage.setItem("userScores", JSON.stringify(initialuserScores));
+		// Initializing badges
+		const initialBadges = { badges: [], isBMMAwarded: false };
+		localStorage.setItem("badges", JSON.stringify(initialBadges));
+		///////////////////////////////////////////////////////////////////////
+		// Retrieving scores
+		const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
 
 		document.addEventListener("DOMContentLoaded", function () {
 			const triviaContainer = document.querySelector("#trivia-container");
@@ -174,9 +174,9 @@ const userScores = JSON.parse(localStorage.getItem("userScores")) || {};
 			}
 		});
 	</script>
-<br />
+	<br />
 			
-					</main> 
+			</main> 
 				
 				
 				
